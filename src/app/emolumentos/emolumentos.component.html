@@ -1,0 +1,121 @@
+<a class="nav-item nav-link" routerLink="create-emolumentos">Novo
+    <span class="material-icons">add_comment</span></a>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body table-responsive">
+    <div class="spinner-grow text-primary" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-secondary" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-success" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-danger" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-warning" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-info" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-light" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-dark" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+                <form class="navbar-form">
+                    <h1><span class="alert">{{texto}}</span></h1>
+                    <div class="input-group no-border">
+                        <input (keyup)="mudaTermo()"
+                               placeholder="Digite o nome desejado..."
+                               (keyup.enter)="onSearch()"
+                               type="text"
+                               id="pesquisar"
+                               name="pesquisar"
+                               class="form-control"
+                               [formControl]="queryField">
+                        <button (click)="onSearch()"
+                                class="btn btn-white btn-round btn-just-icon">
+                            <i class="material-icons">search</i>
+                            <div class="ripple-container"></div>
+                        </button>
+                    </div>
+                </form>
+                <form class="table-wrapper-scroll-y my-custom-scrollbar">
+                    <table class="table table-hover" class="table table-bordered table-striped mb-0">
+                        <thead class="text-warning">
+                        <tr>
+                            <th scope="col">negotiation</th>
+                            <th scope="col">records</th>
+                            <th scope="col">saleoff</th>
+                            <th scope="col">totalCustos</th>
+                            <th scope="col">walletFk</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let emolumentos of results$ | async">
+                            <td>{{ emolumentos.negotiation }}</td>
+                            <td>{{ emolumentos.records }}</td>
+                            <td>{{ emolumentos.saleoff }}</td>
+                            <td>{{ emolumentos.totalCustos }}</td>
+                            <td>{{ emolumentos.walletFk }}</td>
+                            <td class="td-actions text-right">
+                                <button [routerLink]="['/edit-emolumentos', emolumentos.id]"
+                                        class="btn btn-primary btn-link btn-sm btn-just-icon" mat-raised-button
+                                        matTooltip="Editar Corretora" routerLinkActive="active"
+                                        type="button">
+                                    <i class="material-icons">edit</i>
+                                </button>
+                                <button routerLink="/create-company"
+                                        routerLinkActive="active"
+                                        mat-raised-button type="button"
+                                        class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                    <i class="material-icons">close</i>
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--GRID PERMANENTE-->
+<form class="table-wrapper-scroll-y my-custom-scrollbar">
+    <table class="table table-hover" class="table table-bordered table-striped mb-0">
+        <thead class="text-warning">
+        <tr>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let emolumentos of responseEmolumentos">
+            <td>{{ emolumentos.negotiation }}</td>
+            <td>{{ emolumentos.records }}</td>
+            <td>{{ emolumentos.saleoff }}</td>
+            <td>{{ emolumentos.totalCustos }}</td>
+            <td>{{ emolumentos.walletFk }}</td>
+            <td class="td-actions text-right">
+                <button [routerLink]="['/edit-emolumentos', emolumentos.id]"
+                        class="btn btn-primary btn-link btn-sm btn-just-icon" mat-raised-button
+                        matTooltip="Editar Corretora" routerLinkActive="active"
+                        type="button">
+                    <i class="material-icons">edit</i>
+                </button>
+                <button routerLink="/create-company"
+                        routerLinkActive="active"
+                        mat-raised-button type="button"
+                        class="btn btn-danger btn-link btn-sm btn-just-icon">
+                    <i class="material-icons">close</i>
+                </button>
+        </tr>
+        </tbody>
+    </table>
+</form>
+
+

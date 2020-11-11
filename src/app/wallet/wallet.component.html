@@ -1,0 +1,134 @@
+<a class="nav-item nav-link" routerLink="create-brokerage">Novo
+    <span class="material-icons">add_comment</span></a>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body table-responsive">
+                <div *ngIf='showSpinner' class="spinner-grow text-danger" role="status">
+                    <span class="sr-only"></span>
+                </div>
+                <div *ngIf='showSpinner' class="spinner-grow text-primary" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <div *ngIf='showSpinner' class="spinner-grow text-secondary" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <div *ngIf='showSpinner' class="spinner-grow text-success" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <div *ngIf='showSpinner' class="spinner-grow text-danger" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <div *ngIf='showSpinner' class="spinner-grow text-warning" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <div *ngIf='showSpinner' class="spinner-grow text-info" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <div *ngIf='showSpinner' class="spinner-grow text-light" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <div *ngIf='showSpinner' class="spinner-grow text-dark" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <form class="navbar-form">
+                    <h1><span class="alert">{{texto}}</span></h1>
+                    <div class="input-group no-border">
+                        <input (keyup)="mudaTermo()" placeholder="Digite o nome da carteira desejada..."
+                               (keyup.enter)="onSearch()"
+                               type="text"
+                               id="pesquisar"
+                               name="pesquisar"
+                               class="form-control"
+                               [formControl]="queryField">
+                        <button (click)="onSearch()"
+                                class="btn btn-white btn-round btn-just-icon">
+                            <i class="material-icons">search</i>
+                            <div class="ripple-container"></div>
+                        </button>
+                    </div>
+                </form>
+                <form>
+                    <table class="table table-hover">
+                        <thead class="text-warning">
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Modalidade</th>
+                            <th scope="col">Quantidade</th>
+                            <th scope="col">Situação</th>
+                            <th scope="col">Data da Compra</th>
+                            <th scope="col">Date da Vend</th>
+                            <th scope="col">Valor do Dia</th>
+                            <th scope="col">Preço</th>
+                            <th scope="col">Corretora</th>
+                            <th scope="col">Ação</th>
+                            <th scope="col">Usuario</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let wallet of results$ | async">
+                            <td>{{ wallet.id }}</td>
+                            <td>{{ wallet.modality }}</td>
+                            <td>{{ wallet.amount }}</td>
+                            <td>{{ wallet.situation }}</td>
+                            <td>{{ wallet.purchaseData }}</td>
+                            <td>{{ wallet.saleDate }}</td>
+                            <td>{{ wallet.actionValueDay | currency}}</td>
+                            <td>{{ wallet.priceAction | currency}}</td>
+                            <td>{{ wallet.brokerage.name | uppercase }}</td>
+                            <td>{{ wallet.action.description | uppercase }}</td>
+                            <td>{{ wallet.userEntity.nomeCompleto | uppercase }}</td>
+                            <td class="td-actions text-right">
+                                <button [routerLink]="['/edit-wallet', wallet.id]"
+                                        class="btn btn-primary btn-link btn-sm btn-just-icon"
+                                        mat-raised-button
+                                        matTooltip="Editar Carteira" routerLinkActive="active"
+                                        type="button">
+                                    <i class="material-icons">edit</i>
+                                </button>
+                                <button routerLink="/create-wallet"
+                                        routerLinkActive="active"
+                                        mat-raised-button
+                                        type="button"
+                                        class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                    <i class="material-icons">close</i>
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--GRID PERMANENTE-->
+<table class="table table-hover">
+    <thead class="text-warning">
+    <tr>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- {{ dateObj | date }}               // output is 'Jun 15, 2015'
+     {{ dateObj | date:'medium' }}      // output is 'Jun 15, 2015, 9:43:11 PM'
+     {{ dateObj | date:'shortTime' }}   // output is '9:43 PM'
+     {{ dateObj | date:'mm:ss' }}       // output is '43:11'-->
+    <tr *ngFor="let wallet of responseWallet">
+        <td>{{ wallet.id }}</td>
+        <td>{{ wallet.modality }}</td>
+        <td>{{ wallet.amount }}</td>
+        <td>{{ wallet.situation }}</td>
+        <td>{{ wallet.purchaseData }}</td>
+        <td>{{ wallet.saleDate }}</td>
+        <td>{{ wallet.actionValueDay | currency}}</td>
+        <td>{{ wallet.priceAction | currency}}</td>
+        <td>{{ wallet.brokerage.name | uppercase }}</td>
+        <td>{{ wallet.action.description | uppercase }}</td>
+        <td>{{ wallet.userEntity.nomeCompleto | uppercase }}</td>
+    </tr>
+    </tbody>
+</table>
+
+
+
+

@@ -1,0 +1,129 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-header-danger">
+                <p class="card-category"></p>
+                <h4 class="card-title">Editar Empresa</h4>
+            </div>
+            <div class="card-body">
+                <form class="form-group" [formGroup]="companyForm">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Nome</label>
+                                <input type="text" class="form-control"
+                                       id="name"
+                                       formControlName="name"
+                                       [value]="currentCompany.name"
+                                       [(ngModel)]="currentCompany.name"
+                                       name="name">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group" class="example-full-width">
+                                <label for="mainActivity">Atividade</label>
+                                <input type="text" class="form-control"
+                                       id="mainActivity"
+                                       formControlName="mainActivity"
+                                       [value]="currentCompany.mainActivity"
+                                       [(ngModel)]="currentCompany.mainActivity"
+                                       name="mainActivity"></div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group" class="example-full-width">
+                                <label for="market">Mercado</label>
+                                <input type="text" class="form-control"
+                                       id="market"
+                                       formControlName="market"
+                                       [value]="currentCompany.market"
+                                       [(ngModel)]="currentCompany.market"
+                                       name="market"></div>
+                        </div>
+                    </div>
+                    <!--linha 2-->
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group" class="example-full-width">
+                                <label for="cnpj">CNPJ</label>
+                                <input type="text" class="form-control"
+                                       id="cnpj"
+                                       formControlName="cnpj"
+                                       [value]="currentCompany.cnpj"
+                                       [(ngModel)]="currentCompany.cnpj"
+                                       name="cnpj">
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group" class="example-full-width">
+                                <label for="setorialClassification">
+                                    Classificação setoria</label>
+                                <input type="text" class="form-control"
+                                       id="setorialClassification"
+                                       name="setorialClassification"
+                                       formControlName="setorialClassification"
+                                       [value]="currentCompany.setorialClassification"
+                                       [(ngModel)]="currentCompany.setorialClassification">
+                            </div>
+                        </div>
+                    </div>
+                    <!--linha 2-->
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group" class="example-full-width">
+                                <label for="site">Site</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="site"
+                                       name="site"
+                                       formControlName="site"
+                                       [value]="currentCompany.site"
+                                       [(ngModel)]="currentCompany.site">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group" class="example-full-width">
+                                <label for="status">Status</label>
+                                <select class="form-control"
+                                        id="status"
+                                        name="status"
+                                        formControlName="status"
+                                        [value]="currentCompany.status"
+                                        [(ngModel)]="currentCompany.status">
+                                    <option *ngFor="let p of statusString" [ngValue]="p.valueOf()">
+                                        {{ p }}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group" class="example-full-width">
+                                <label for="sector">Setor</label>
+                                <select class="form-control"
+                                        id="sector"
+                                        formControlName="sector"
+                                        [value]="currentCompany.sector"
+                                        [(ngModel)]="currentCompany.sector">
+                                    <option  *ngFor="let sector of sectores$ | async" [value]="sector.id">
+                                        {{sector.id}} => {{sector.description}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+<!--combo-->
+                    </div>
+                    <!--botao-->
+                    <div class="dropdown show-dropdown">
+                        <button data-toggle="dropdown"
+                                aria-expanded="true"
+                                (click)="updateCompany()"
+                                class="btn btn-danger pull-right">Salvar
+                        </button>
+                    </div>
+                    <!--botao-->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+

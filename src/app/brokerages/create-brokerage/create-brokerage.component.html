@@ -1,0 +1,248 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-header-danger">
+                <p class="card-category"></p>
+                <h4 class="card-title">Cadastrar Corretora</h4>
+             </div>
+            <div class="card-body">
+                <form class="form-group" [formGroup]="brokerageForm">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Nome</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="name"
+                                       formControlName="name"
+                                       [(ngModel)]="request.name"
+                                       name="name">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">CNPJ</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="cnpj"
+                                       formControlName="cnpj"
+                                       [(ngModel)]="request.cnpj"
+                                       name="cnpj"></div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Endereço</label>
+                                <input type="text" class="form-control" id="address"
+                                       formControlName="address"
+                                       [(ngModel)]="request.address"
+                                       name="address"></div>
+                        </div>
+                    </div>
+ <!--linha 2-->
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Bairro</label>
+                                <input type="text" class="form-control"
+                                       id="addressNeighborhood"
+                                       formControlName="addressNeighborhood"
+                                       [(ngModel)]="request.addressNeighborhood"
+                                       name="addressNeighborhood">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Cidade</label>
+                                <input type="text" class="form-control"
+                                       id="addressCity"
+                                       formControlName="addressCity"
+                                       [(ngModel)]="request.addressCity"
+                                       name="addressCity"></div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Estado</label>
+                                <input type="text" class="form-control"
+                                       id="addressState"
+                                       formControlName="addressState"
+                                       [(ngModel)]="request.addressState"
+                                       name="addressState"></div>
+                        </div>
+                    </div>
+                    <!--linha 2-->
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Swing Trade</label>
+                                <input type="text" class="form-control"
+                                       id="swingTrade"
+                                       formControlName="swingTrade"
+                                       [(ngModel)]="request.swingTrade"
+                                       name="swingTrade">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Tipo</label>
+                                <input type="text" class="form-control"
+                                       id="tipo"
+                                       formControlName="tipo"
+                                       [(ngModel)]="request.tipo"
+                                       name="tipo"></div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Day Trade</label>
+                                <input type="text" class="form-control"
+                                       id="dayTrade"
+                                       formControlName="dayTrade"
+                                       [(ngModel)]="request.dayTrade"
+                                       name="dayTrade"></div>
+                        </div>
+                    </div>
+                    <!--linha 3-->
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">ISS</label>
+                                <input type="text" class="form-control"
+                                       id="iss"
+                                       formControlName="iss"
+                                       [(ngModel)]="request.iss"
+                                       name="iss">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Telefone</label>
+                                <input type="text" class="form-control"
+                                       id="phone"
+                                       formControlName="phone"
+                                       [(ngModel)]="request.phone"
+                                       name="phone"></div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Web Site</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="website"
+                                       formControlName="website"
+                                       [(ngModel)]="request.website"
+                                       name="website"></div>
+                        </div>
+                    </div>
+                    <!--linha 4-->
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Email</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="email"
+                                       formControlName="email"
+                                       [(ngModel)]="request.email"
+                                       name="email">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">logo</label>
+                                <input type="text"
+                                       class="form-control"
+                                       formControlName="logo"
+                                       id="logo" [(ngModel)]="request.logo"
+                                       name="logo"></div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group" class="example-full-width">
+                                <label for="status">Status</label>
+                                <select class="form-control"
+                                        id="status"
+                                        name="status"
+                                        formControlName="status"
+                                        [value]="request.status"
+                                        [(ngModel)]="request.status">
+                                    <option *ngFor="let p of statusString" [ngValue]="p.valueOf()">
+                                        {{ p }}
+                                    </option>
+                                </select>
+                           </div>
+                         </div>
+                    </div>
+                    <!--linha 5-->
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Login Access Code</label>
+                                <input class="form-check-input"
+                                       type="checkbox"
+                                       class="form-control"
+                                       id="loginAccessCode"
+                                       for="loginAccessCode"
+                                       formControlName="loginAccessCode"
+                                       [(ngModel)]="request.loginAccessCode"
+                                       name="loginAccessCode">
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Login CPF</label>
+                                <input class="form-check-input"
+                                       type="checkbox"
+                                       class="form-control"
+                                       id="loginCpf"
+                                       for="loginCpf"
+                                       formControlName="loginCpf"
+                                       [(ngModel)]="request.loginCpf"
+                                       name="loginCpf"></div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Login Email</label>
+                                <input class="form-check-input" type="checkbox"
+                                       class="form-control"
+                                       id="loginEmail"
+                                       for="loginEmail"
+                                       formControlName="loginEmail"
+                                       [(ngModel)]="request.loginEmail"
+                                       name="loginEmail"></div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Login Login Password</label>
+                                <input class="form-check-input" type="checkbox"
+                                       class="form-control"
+                                       id="loginPassword"
+                                       for="loginPassword"
+                                       formControlName="loginPassword"
+                                       [(ngModel)]="request.loginPassword"
+                                       name="loginEmail"></div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Login Login Token</label>
+                                <input class="form-check-input" type="checkbox"
+                                       class="form-control"
+                                       id="loginToken"
+                                       for="loginToken"
+                                       formControlName="loginToken"
+                                       [(ngModel)]="request.loginToken"
+                                       name="loginToken"></div>
+                        </div>
+                    </div>
+                    <!--botao-->
+                    <div class="dropdown show-dropdown">
+                        <button data-toggle="dropdown"
+                                aria-expanded="true"
+                                (click)="save()"
+                                class="btn btn-danger pull-right">Salvar
+                        </button>
+                    </div>
+                    <!--botao-->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

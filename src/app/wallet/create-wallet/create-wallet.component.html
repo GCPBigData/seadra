@@ -1,0 +1,136 @@
+<app-sidebar></app-sidebar>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-header-danger">
+                <p class="card-category"></p>
+                <h4 class="card-title">Cadastrar Empresa</h4>
+            </div>
+            <div class="card-body">
+                <form class="form-group" [formGroup]="walletForm">
+                    <div class="row">
+
+                        <div class="col-md-5">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Nome</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="name"
+                                       formControlName="name"
+                                       [(ngModel)]="request.name"
+                                       name="name">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Atividade</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="mainActivity"
+                                       formControlName="mainActivity"
+                                       [(ngModel)]="request.mainActivity"
+                                       name="mainActivity"></div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Mercado</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="market"
+                                       formControlName="market"
+                                       [(ngModel)]="request.market"
+                                       name="market"></div>
+                        </div>
+                    </div>
+                    <!--linha 2-->
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">CNPJ</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="cnpj"
+                                       formControlName="cnpj"
+                                       [(ngModel)]="request.cnpj"
+                                       name="cnpj">
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">
+                                    Classificação setoria</label>
+                                <input type="text" class="form-control"
+                                       id="setorialClassification"
+                                       formControlName="setorialClassification"
+                                       [(ngModel)]="request.setorialClassification"
+                                       name="setorialClassification"></div>
+                        </div>
+                    </div>
+                    <!--linha 2-->
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Site</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="site"
+                                       formControlName="site"
+                                       [(ngModel)]="request.site"
+                                       name="site">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group" class="example-full-width">
+                                <label for="status">Status</label>
+                                <input type="text" class="form-control"
+                                       id="status"
+                                       formControlName="status"
+                                       [(ngModel)]="request.status"
+                                       name="status"></div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group" class="example-full-width">
+                                <label for="sector">Setor</label>
+                                <select class="form-control"
+                                        id="sector"
+                                        formControlName="sector"
+                                        [value]="request.sector"
+                                        [(ngModel)]="request.sector">
+                                    <option  *ngFor="let sector of sectores | async"
+                                             [value]="sector.id">
+
+                                        {{sector.id}} => {{sector.description}}
+
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <!--              <div class="col-md-3">
+                                          <div class="form-group" class="example-full-width">
+                                              <label for="name">Setor</label>
+                                              <select formControlName="sector" id="sector" [(ngModel)]="request.sector" name="sector">
+                                                  <option *ngFor="let responseSector of responseSector; let i = index" [value]="responseSector[i].id">
+                                                         {{responseSector[i].description}}
+                                                  </option>
+                                              </select>
+                                          </div>
+                                      </div>-->
+
+                    </div>
+                    <!--botao-->
+                    <div class="dropdown show-dropdown">
+                        <button data-toggle="dropdown"
+                                aria-expanded="true"
+                                (click)="save()"
+                                class="btn btn-danger pull-right">Salvar
+                        </button>
+                    </div>
+                    <!--botao-->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

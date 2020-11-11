@@ -1,0 +1,227 @@
+<a class="nav-item nav-link" routerLink="/create-brokerage">Novo
+    <span class="material-icons">add_comment</span></a>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body table-responsive">
+                <div *ngIf='showSpinner' class="spinner-grow text-danger" role="status">
+                    <span class="sr-only"></span>
+                </div>
+                <div *ngIf='showSpinner' class="spinner-grow text-primary" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <div *ngIf='showSpinner' class="spinner-grow text-secondary" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <div *ngIf='showSpinner' class="spinner-grow text-success" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <div *ngIf='showSpinner' class="spinner-grow text-danger" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <div *ngIf='showSpinner' class="spinner-grow text-warning" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <div *ngIf='showSpinner' class="spinner-grow text-info" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <div *ngIf='showSpinner' class="spinner-grow text-light" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <div *ngIf='showSpinner' class="spinner-grow text-dark" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <form class="navbar-form">
+                    <h1><span class="alert">{{texto}}</span></h1>
+                    <div class="input-group no-border">
+                        <input (keyup)="mudaTermo()" placeholder="Digite uma corretora desejado..." value=""
+                               (keyup.enter)="onSearch()"
+                               type="text"
+                               id="pesquisar"
+                               name="pesquisar"
+                               class="form-control"
+                               [formControl]="queryField">
+                        <button (click)="onSearch()" class="btn btn-white btn-round btn-just-icon">
+                            <i class="material-icons">search</i>
+                            <div class="ripple-container"></div>
+                        </button>
+                    </div>
+                </form>
+                <form>
+                    <table class="table table-hover">
+                        <thead class="text-warning">
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">CNPJ</th>
+                            <th scope="col">Tipo</th>
+                            <th scope="col">Day Trade</th>
+                            <th scope="col">Swing Trade</th>
+                            <th scope="col">ISS</th>
+                            <th scope="col">Valor(Day)</th>
+                            <th scope="col">Valor(Swing)</th>
+                            <th scope="col">Status</th>
+                            <th scope="col"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!--| slice:0:10-->
+                        <tr *ngFor="let brokerage of results$ | async">
+                            <td>{{ brokerage.name }}</td>
+                            <td>{{ brokerage.cnpj }}</td>
+                            <td>{{ brokerage.tipo }}</td>
+                            <td class="text-info">R{{ brokerage.dayTrade | currency }}</td>
+                            <td class="text-success">R{{ brokerage.swingTrade | currency }}</td>
+                            <td *ngIf="brokerage.iss > 5">
+                        <span class="text-success">
+                        <i class="fa fa-long-arrow-up"></i>{{ brokerage.iss }} %
+                        </span>
+                            </td>
+                            <td class="text-danger" *ngIf="brokerage.iss <= 5">
+                                <i class="fa fa-long-arrow-down"></i>{{ brokerage.iss }} %
+                            </td>
+                            <td class="text-info" *ngIf="brokerage.dayTrade > 0">
+                                R{{ brokerage.dayTrade * brokerage.iss / 100 | currency }}
+                            </td>
+                            <td class="text-danger" *ngIf="brokerage.dayTrade <= 0">
+                          <span class="material-icons">
+                            thumb_down_alt
+                          </span>
+                            </td>
+                            <td *ngIf="brokerage.swingTrade > 0">
+                                <span class="material-icons">attach_money</span>
+                                <span class="text-success">
+                         R{{ brokerage.swingTrade * brokerage.iss / 100 | currency }}
+                        </span>
+                            </td>
+                            <td *ngIf="brokerage.swingTrade <= 0">
+                                <span class="material-icons">attach_money</span>
+                                <span class="text-danger">
+                         <span class="material-icons">
+                            thumb_down_alt
+                        </span>
+                        </span>
+                            </td>
+                            <td *ngIf="brokerage.status == 'INATIVO'">
+                                <button
+                                        mat-rais ed-button
+                                        type="button"
+                                        class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                    <i class="material-icons">warning</i>
+                                </button>
+                            </td>
+                            <td *ngIf="brokerage.status == 'ATIVO'">
+                                <button mat-raised-button
+                                        type="button"
+                                        class="btn  btn-link btn-sm btn-just-icon">
+                          <span class="text-success">
+                          <i class="material-icons">done_all</i></span>
+                                </button>
+                            </td>
+                            <td class="td-actions text-right">
+                                <button [routerLink]="['/edit-brokerage', brokerage.id]"
+                                        class="btn btn-primary btn-link btn-sm btn-just-icon" mat-raised-button
+                                        matTooltip="Editar Corretora" routerLinkActive="active"
+                                        type="button">
+                                    <i class="material-icons">edit</i>
+                                </button>
+                                <button routerLink="/create-brokerage"
+                                        routerLinkActive="active"
+                                        mat-raised-button type="button"
+                                        class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                    <i class="material-icons">close</i>
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--GRID PERMANENTE-->
+<form class="table-wrapper-scroll-y my-custom-scrollbar">
+    <table class="table table-hover" class="table table-bordered table-striped mb-0">
+        <thead class="text-warning">
+        <tr>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <!--<tr *ngFor="let brokerage of responseBrokerages;
+        let i = index" [class.active]="i == currentIndex" (click)="setActiveBrokerage(brokerage, i)">
+-->
+        <tr *ngFor="let brokerage of responseBrokerages">
+            <td>{{ brokerage.name }}</td>
+            <td>{{ brokerage.cnpj }}</td>
+            <td>{{ brokerage.tipo }}</td>
+            <td class="text-info">R{{ brokerage.dayTrade | currency }}</td>
+            <td class="text-success">R{{ brokerage.swingTrade | currency }}</td>
+            <td *ngIf="brokerage.iss > 5">
+                        <span class="text-success">
+                        <i class="fa fa-long-arrow-up"></i>{{ brokerage.iss }} %
+                        </span>
+            </td>
+            <td class="text-danger" *ngIf="brokerage.iss <= 5">
+                <i class="fa fa-long-arrow-down"></i>{{ brokerage.iss }} %
+            </td>
+            <td class="text-info" *ngIf="brokerage.dayTrade > 0">
+                R{{ brokerage.dayTrade * brokerage.iss / 100 | currency }}
+            </td>
+            <td class="text-danger" *ngIf="brokerage.dayTrade <= 0">
+                          <span class="material-icons">
+                            thumb_down_alt
+                          </span>
+            </td>
+            <td *ngIf="brokerage.swingTrade > 0">
+                <span class="material-icons">attach_money</span>
+                <span class="text-success">
+                         R{{ brokerage.swingTrade * brokerage.iss / 100 | currency }}
+                        </span>
+            </td>
+            <td *ngIf="brokerage.swingTrade <= 0">
+                <span class="material-icons">attach_money</span>
+                <span class="text-danger">
+                         <span class="material-icons">
+                            thumb_down_alt
+                        </span>
+                        </span>
+            </td>
+
+            <td *ngIf="brokerage.status == 'INATIVO'">
+                <button
+                        mat-rais ed-button
+                        type="button"
+                        class="btn btn-danger btn-link btn-sm btn-just-icon">
+                    <i class="material-icons">warning</i>
+                </button>
+            </td>
+            <td *ngIf="brokerage.status == 'ATIVO'">
+                <button mat-raised-button
+                        type="button"
+                        class="btn  btn-link btn-sm btn-just-icon">
+                          <span class="text-success">
+                          <i class="material-icons">done_all</i></span>
+              </button>
+              <button [routerLink]="['/edit-brokerage', brokerage.id]"
+                        class="btn btn-primary btn-link btn-sm btn-just-icon" mat-raised-button
+                        matTooltip="Editar Corretora" routerLinkActive="active"
+                        type="button">
+                    <i class="material-icons">edit</i>
+              </button>
+           </td>
+        </tr>
+      </tbody>
+    </table>
+</form>
+
+

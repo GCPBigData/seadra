@@ -1,0 +1,12 @@
+﻿<a class="nav-item nav-link" routerLink="create-brokerage">Novo
+    <span class="material-icons">add_comment</span></a>
+<div class="card mt-4">
+    <h4 class="card-header">Home</h4>
+    <div class="card-body">
+        <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
+        <ul *ngIf="userFromApi">
+            <li>{{userFromApi.firstName}} {{userFromApi.lastName}}</li>
+        </ul>
+    </div>
+</div>
+

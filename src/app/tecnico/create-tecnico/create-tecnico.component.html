@@ -1,0 +1,206 @@
+<app-sidebar></app-sidebar>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-header-danger">
+                <p class="card-category"></p>
+                <h4 class="card-title">Cadastrar Técnicos</h4>
+            </div>
+            <div class="card-body">
+                <form class="form-group" [formGroup]="tecnicoForm">
+                    <div class="row">
+
+                        <div class="col-md-5">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Nome</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="name"
+                                       formControlName="name"
+                                       [(ngModel)]="request.name"
+                                       name="name">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group" class="example-full-width">
+                                <label for="rg">RG</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="rg"
+                                       formControlName="rg"
+                                       [(ngModel)]="request.rg"
+                                       name="rg"></div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group" class="example-full-width">
+                                <label for="dataNascimento">Nascimento</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="dataNascimento"
+                                       formControlName="dataNascimento"
+                                       [(ngModel)]="request.dataNascimento"
+                                       name="dataNascimento"></div>
+                        </div>
+                    </div>
+                    <!--linha 2-->
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group" class="example-full-width">
+                                <label for="nomeMae">Mae</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="nomeMae"
+                                       formControlName="nomeMae"
+                                       [(ngModel)]="request.nomeMae"
+                                       name="nomeMae">
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group" class="example-full-width">
+                                <label for="endereco">Endereço</label>
+                                <input type="text" class="form-control"
+                                       id="endereco"
+                                       formControlName="endereco"
+                                       [(ngModel)]="request.endereco"
+                                       name="endereco"></div>
+                        </div>
+                    </div>
+                    <!--linha 2-->
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group" class="example-full-width">
+                                <label for="cidade">Cidade</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="cidade"
+                                       formControlName="cidade"
+                                       [(ngModel)]="request.cidade"
+                                       name="cidade">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group" class="example-full-width">
+                                <label for="estado">Estado</label>
+                                <input type="text" class="form-control"
+                                       id="estado"
+                                       formControlName="estado"
+                                       [(ngModel)]="request.estado"
+                                       name="estado"></div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group" class="example-full-width">
+                                <label for="cep">CEP</label>
+                                <input type="text" class="form-control"
+                                       id="cep"
+                                       formControlName="cep"
+                                       [(ngModel)]="request.cep"
+                                       name="cep"></div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group" class="example-full-width">
+                                <label for="pais">País</label>
+                                <input type="text" class="form-control"
+                                       id="pais"
+                                       formControlName="pais"
+                                       [(ngModel)]="request.pais"
+                                       name="pais"></div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group" class="example-full-width">
+                                <label for="telefone">Telefone</label>
+                                <input type="text" class="form-control"
+                                       id="telefone"
+                                       formControlName="telefone"
+                                       [(ngModel)]="request.telefone"
+                                       name="telefone"></div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group" class="example-full-width">
+                                <label for="valorChamado">Valor Chamado</label>
+                                <input type="text" class="form-control"
+                                       id="valorChamado"
+                                       formControlName="valorChamado"
+                                       [(ngModel)]="request.valorChamado"
+                                       name="valorChamado"></div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group" class="example-full-width">
+                                <label for="valorHora">Valor Hora</label>
+                                <input type="text" class="form-control"
+                                       id="valorHora"
+                                       formControlName="valorHora"
+                                       [(ngModel)]="request.valorHora"
+                                       name="valorHora"></div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group" class="example-full-width">
+                                <label for="valorMes">Valor Mes</label>
+                                <input type="text" class="form-control"
+                                       id="valorMes"
+                                       formControlName="valorMes"
+                                       [(ngModel)]="request.valorMes"
+                                       name="valorMes"></div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group" class="example-full-width">
+                                <label for="banco">Banco</label>
+                                <input type="text" class="form-control"
+                                       id="banco"
+                                       formControlName="banco"
+                                       [(ngModel)]="request.banco"
+                                       name="banco"></div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group" class="example-full-width">
+                                <label for="agencia">Agencia</label>
+                                <input type="text" class="form-control"
+                                       id="agencia"
+                                       formControlName="agencia"
+                                       [(ngModel)]="request.agencia"
+                                       name="agencia"></div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group" class="example-full-width">
+                                <label for="conta">Conta</label>
+                                <input type="text" class="form-control"
+                                       id="conta"
+                                       formControlName="conta"
+                                       [(ngModel)]="request.conta"
+                                       name="conta"></div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group" class="example-full-width">
+                                <label for="nomeTitularConta">Nome Titular Conta</label>
+                                <input type="text" class="form-control"
+                                       id="nomeTitularConta"
+                                       formControlName="nomeTitularConta"
+                                       [(ngModel)]="request.nomeTitularConta"
+                                       name="nomeTitularConta"></div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group" class="example-full-width">
+                                <label for="cpfTitularConta">CPF Titular Conta</label>
+                                <input type="text" class="form-control"
+                                       id="cpfTitularConta"
+                                       formControlName="cpfTitularConta"
+                                       [(ngModel)]="request.cpfTitularConta"
+                                       name="cpfTitularConta"></div>
+                        </div>
+                    </div>
+                    <!--botao-->
+                    <div class="dropdown show-dropdown">
+                        <button data-toggle="dropdown"
+                                aria-expanded="true"
+                                (click)="save()"
+                                class="btn btn-danger pull-right">Salvar
+                        </button>
+                    </div>
+                    <!--botao-->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

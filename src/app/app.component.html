@@ -1,0 +1,27 @@
+<!-- nav -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="user">
+    <button class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <a class="nav-item nav-link" routerLink="/">Home<span class="material-icons">home_work</span></a>
+        <a class="nav-item nav-link" routerLink="/tecnicos">Técnicos<span class="material-icons">face</span></a>
+        <!--<a class="nav-item nav-link" routerLink="/emolumentos">Emolumentos<span class="material-icons">account_tree</span></a>
+        <a class="nav-item nav-link" routerLink="/brokerages">Brokerages<span class="material-icons">dialpad</span></a>
+        <a class="nav-item nav-link" routerLink="/company">Empresas<span class="material-icons">work</span></a>
+        <a class="nav-item nav-link" routerLink="/wallet">Carteiras<span class="material-icons">attach_money</span></a> -->
+        <a class="nav-item nav-link" routerLink="/user">User<span class="material-icons">people_alt</span></a>
+        <a class="nav-item nav-link" routerLink="/admin" *ngIf="isAdmin">Admin<span class="material-icons">adb</span></a>
+        <a class="nav-item nav-link" (click)="logout()">Logout<span class="material-icons">double_arrow</span></a>
+ </div>
+</nav>
+<!-- main app container -->
+<div class="container">
+    <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,277 @@
+<app-sidebar></app-sidebar>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-header-danger">
+                <p class="card-category"></p>
+                <h4 class="card-title">Editar Corretora</h4>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Nome</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="name"
+                                       formControlName="name"
+                                       [value]="currentBrokerage.name"
+                                       [(ngModel)]="currentBrokerage.name"
+                                       name="name">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">CNPJ</label>
+                                <input disabled type="text" class="form-control" id="cnpj"
+                                       formControlName="cnpj"
+                                       [value]="currentBrokerage.cnpj"
+                                       [(ngModel)]="currentBrokerage.cnpj"
+                                       name="cnpj"></div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Endereço</label>
+                                <input type="text" class="form-control" id="address"
+                                       formControlName="address"
+                                       [value]="currentBrokerage.address"
+                                       [(ngModel)]="currentBrokerage.address"
+                                       name="address"></div>
+                        </div>
+                    </div>
+                    <!--linha 2-->
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Bairro</label>
+                                <input type="text" class="form-control"
+                                       id="addressNeighborhood"
+                                       formControlName="addressNeighborhood"
+                                       [value]="currentBrokerage.addressNeighborhood"
+                                       [(ngModel)]="currentBrokerage.addressNeighborhood"
+                                       name="addressNeighborhood">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Cidade</label>
+                                <input type="text" class="form-control"
+                                       id="addressCity"
+                                       formControlName="addressCity"
+                                       [value]="currentBrokerage.addressCity"
+                                       [(ngModel)]="currentBrokerage.addressCity"
+                                       name="addressCity"></div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Estado</label>
+                                <input type="text" class="form-control"
+                                       id="addressState"
+                                       formControlName="addressState"
+                                       [value]="currentBrokerage.addressState"
+                                       [(ngModel)]="currentBrokerage.addressState"
+                                       name="addressState"></div>
+                        </div>
+                    </div>
+                    <!--linha 2-->
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Swing Trade</label>
+                                <input type="text" class="form-control"
+                                       id="swingTrade"
+                                       formControlName="swingTrade"
+                                       [value]="currentBrokerage.swingTrade"
+                                       [(ngModel)]="currentBrokerage.swingTrade"
+                                       name="swingTrade">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Tipo</label>
+                                <input type="text" class="form-control"
+                                       id="tipo"
+                                       formControlName="tipo"
+                                       [value]="currentBrokerage.tipo"
+                                       [(ngModel)]="currentBrokerage.tipo"
+                                       name="tipo"></div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Day Trade</label>
+                                <input type="text" class="form-control"
+                                       id="dayTrade"
+                                       formControlName="dayTrade"
+                                       [value]="currentBrokerage.dayTrade"
+                                       [(ngModel)]="currentBrokerage.dayTrade"
+                                       name="dayTrade"></div>
+                        </div>
+                    </div>
+                    <!--linha 3-->
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">ISS</label>
+                                <input type="text" class="form-control"
+                                       id="iss"
+                                       formControlName="iss"
+                                       [value]="currentBrokerage.iss"
+                                       [(ngModel)]="currentBrokerage.iss"
+                                       name="iss">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Telefone</label>
+                                <input type="text" class="form-control"
+                                       id="phone"
+                                       formControlName="phone"
+                                       [value]="currentBrokerage.phone"
+                                       [(ngModel)]="currentBrokerage.phone"
+                                       name="phone"></div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Web Site</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="website"
+                                       formControlName="website"
+                                       [value]="currentBrokerage.website"
+                                       [(ngModel)]="currentBrokerage.website"
+                                       name="website"></div>
+                        </div>
+                    </div>
+                    <!--linha 4-->
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Email</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="email"
+                                       formControlName="email"
+                                       [value]="currentBrokerage.email"
+                                       [(ngModel)]="currentBrokerage.email"
+                                       name="email">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">logo</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="logo"
+                                       formControlName="logo"
+                                       [value]="currentBrokerage.logo"
+                                       [(ngModel)]="currentBrokerage.logo"
+                                       name="logo"></div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Status</label>
+                                <select class="form-control"
+                                        id="status"
+                                        name="status"
+                                        formControlName="status"
+                                        [value]="currentBrokerage.status"
+                                        [(ngModel)]="currentBrokerage.status">
+                                    <option *ngFor="let p of statusString" [ngValue]="p.valueOf()">
+                                        {{ p }}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <!--linha 5-->
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Login Access Code</label>
+                                <input class="form-check-input"
+                                       type="checkbox"
+                                       class="form-control"
+                                       id="loginAccessCode"
+                                       for="loginAccessCode"
+                                       formControlName="loginAccessCode"
+                                       [value]="currentBrokerage.loginAccessCode"
+                                       [(ngModel)]="currentBrokerage.loginAccessCode"
+                                       name="loginAccessCode">
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Login CPF</label>
+                                <input class="form-check-input"
+                                       type="checkbox"
+                                       class="form-control"
+                                       id="loginCpf"
+                                       for="loginCpf"
+                                       formControlName="loginCpf"
+                                       [value]="currentBrokerage.loginCpf"
+                                       [(ngModel)]="currentBrokerage.loginCpf"
+                                       name="loginCpf"></div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Login Email</label>
+                                <input class="form-check-input" type="checkbox"
+                                       class="form-control"
+                                       id="loginEmail"
+                                       for="loginEmail"
+                                       formControlName="loginEmail"
+                                       [value]="currentBrokerage.loginEmail"
+                                       [(ngModel)]="currentBrokerage.loginEmail"
+                                       name="loginEmail"></div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Login Login Password</label>
+                                <input class="form-check-input" type="checkbox"
+                                       class="form-control"
+                                       id="loginPassword"
+                                       for="loginPassword"
+                                       formControlName="loginPassword"
+                                       [value]="currentBrokerage.loginPassword"
+                                       [(ngModel)]="currentBrokerage.loginPassword"
+                                       name="loginPassword"></div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group" class="example-full-width">
+                                <label for="name">Login Login Token</label>
+                                <input class="form-check-input" type="checkbox"
+                                       class="form-control"
+                                       id="loginToken"
+                                       for="loginToken"
+                                       formControlName="loginToken"
+                                       [value]="currentBrokerage.loginToken"
+                                       [(ngModel)]="currentBrokerage.loginToken"
+                                       name="loginToken"></div>
+                        </div>
+                    </div>
+                    <!--botao-->
+                    <div class="dropdown show-dropdown">
+
+                        <ul class="dropdown-menu">
+                            <div class="card" style="width: 18rem;">
+                                <div *ngIf="!response">
+                                    <span (change)="showNotificationErro('bottom','right')" class="badge badge-danger">erro do servidor !</span>
+                                </div>
+                            </div>
+                        </ul>
+
+                        <button data-toggle="dropdown"
+                                aria-expanded="true"
+                                (click)="updateBrokerageX()"
+                                (click)="showNotificationSucesso('bottom','right')"
+                                routerLink="/brokerages"
+                                class="btn btn-danger pull-right">Atualizar
+                        </button>
+                      </div>
+                    <!--botao-->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
